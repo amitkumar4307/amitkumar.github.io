@@ -1,0 +1,238 @@
+{% extends 'parent.html' %}
+{% load static %}
+{% block admin %}
+<style>
+  section {
+    min-height: 100vh;
+    padding: 10rem 12% 10rem;
+  }
+ 
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15rem;
+  }
+  
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    text-align: left;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  
+  span {
+    color: var(--accent-color);
+  }
+  
+  .home-content h3 {
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    font-size: 3.5rem;
+  }
+  
+  .home-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  
+  .home-img {
+    border-radius: 50%;
+  }
+  
+  .home-img img {
+    position: relative;
+    top: 3rem;
+    height: 65vh;
+    width: 30vw;
+    border-radius: 50%;
+    box-shadow: 0 0 20px var(--accent-color);
+  }
+  
+  .home-img img:hover {
+    box-shadow: 0 0 15px var(--accent-color),
+                0 0 30px var(--accent-color),
+                0 0 60px var(--accent-color);
+  }
+  
+  .home-content p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8;
+    max-width: 1000px;
+  }
+  
+  .home .social-links {
+    margin-top: 25px;
+  }
+  
+  .home .social-links a {
+    background-color: color-mix(in srgb, var(--default-color), transparent 90%);
+    color: var(--default-color);
+    font-size: 14px;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    transition: 0.3s;
+  }
+  
+  .home .social-links a:hover {
+    background-color: var(--accent-color);
+  }
+  
+  .text-animated {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .text-animated span {
+    display: inline-block;
+  }
+
+  .text-animated span::before {
+    content: "Full Stack Developer";
+    color: var(--accent-color);
+    animation: words 5s infinite;
+  }
+
+  .text-animated span::after {
+    content: "";
+    position: absolute;
+    background-color: var(--bg-color);
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite;
+  }
+
+  @keyframes cursor {
+    0%, 100% {
+      border-color: transparent;
+    }
+    50% {
+      border-color: var(--accent-color);
+    }
+  }
+
+  @keyframes words {
+    0%, 20% {
+      content: "Full Stack Developer";
+    }
+    21%, 40% {
+      content: "Data Analyst";
+    }
+  }
+
+  @keyframes typing {
+    0%, 100% {
+      width: 0;
+    }
+    5%, 20% {
+      width: calc(100% + 8px);
+    }
+    80%, 95% {
+      width: calc(100% + 8px);
+    }
+  }
+
+  /* Media Queries for Responsiveness */
+  @media (max-width: 1024px) {
+    .home {
+      flex-direction: column;
+      gap: 5rem;
+    }
+    
+    .home-content h3 {
+      font-size: 2.5rem; /* Adjust heading sizes */
+    }
+    
+    .home-content h1 {
+      font-size: 2.2rem; /* Adjusted for responsiveness */
+      white-space: normal; /* Allow wrapping */
+    }
+    
+    .home-img img {
+      width: 50vw; /* Adjust image width */
+    }
+  }
+
+  @media (max-width: 768px) {
+    section {
+      padding: 5rem 5%; /* Adjust padding */
+    }
+
+    .home-content h3 {
+      font-size: 2rem; /* Smaller headings */
+    }
+
+    .home-content h1 {
+      font-size: 1.8rem; /* Smaller headings */
+      white-space: normal; /* Allow wrapping */
+    }
+
+    .home-img img {
+      width: 70vw; /* Further adjust image width */
+    }
+
+    .text-animated {
+      font-size: 28px; /* Adjust text size */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .home-content h3 {
+      font-size: 1.5rem; /* Smaller headings for mobile */
+    }
+
+    .home-content h1 {
+      font-size: 1.5rem; /* Adjusted for mobile */
+      white-space: normal; /* Allow wrapping */
+    }
+
+    .home-img img {
+      width: 90vw; /* Full width for small screens */
+    }
+
+    .text-animated {
+      font-size: 24px; /* Adjust text size */
+    }
+
+    .home .social-links a {
+      width: 2.5rem; /* Adjust icon size */
+      height: 2.5rem; /* Adjust icon size */
+      margin-right: 10px; /* Adjust margin */
+    }
+  }
+</style>
+
+<section id="home" class="home">
+  <div class="home-content" id="Kavita">
+    <h1>Hi, I'm <span>Amit Kumar</span></h1>
+    <div class="text-animated">I'm a <span></span></div>
+    <div class="social-links">
+      <a href="https://x.com/AmitKum41051130"><i class="bi bi-twitter-x"></i></a>
+      <a href="https://www.facebook.com/profile.php?id=100056143283484&mibextid=ZbWKwL"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/engineer_shrey_sharma_s?igsh=ZzJ6bXh3ZGM2d3Y3"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/amit-kumar-676954252/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
+    </div>
+  </div>
+  <div class="home-img">
+    <img src="{% static 'assets/img/12.jpg' %}" alt="">
+  </div>
+</section>
+
+{% endblock %}

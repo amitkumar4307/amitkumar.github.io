@@ -1,0 +1,38 @@
+{% extends 'parent.html' %}
+{% load static %}
+{% block admin %}
+
+<div class="container">
+    <form method="post" action="{% url 'logcode' %}">
+      {% csrf_token %}
+        <div class="row">
+            <div class="col-sm-4 mx-auto mt-5" style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                <h2 class="mt-5" style="text-align:center;"><b>Login</b></h2>
+                 {% if msg %}
+                    <div class="alert alert-danger" role="alert">{{msg}}</div>
+                  {% endif %}
+                 <hr/>
+                  <input type='email' name="user" class='form-control'placeholder="email or userid"  required>
+                  <input type='password' name="password" class='form-control mt-3'placeholder="password"  required>
+                  <select id="adminTypeSelect" class="form-select mt-3" name="adminType" >
+                      <option disabled selected>Only admin</option>
+                      
+                      
+                      
+                  </select>
+                  
+                    
+                  <button class="btn btn-primary mt-4 form-control" type="Submit" >Login</button>
+                  <h6 style="margin-left:30%;margin-top:10px;"> <a href="#"> Forgotten Password?</a></h6>
+                  <hr/>
+                  <a href="#">
+                  <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn mt-2 form-control " style="background-color:rgb(79, 181, 32);color:white">Don't have account? Sign Up</button>
+                </a>
+                  <hr/><br/>
+            </div>
+        </div>
+    </form>
+  </div>
+
+
+{% endblock %}

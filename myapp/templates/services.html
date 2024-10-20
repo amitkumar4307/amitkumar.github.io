@@ -1,0 +1,119 @@
+{% extends 'parent.html' %}
+{% load static %}
+{% block admin %}
+
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Services</h1>
+              <p class="mb-0">I'm offering these services.......</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Services</li>
+          </ol> 
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Services Section -->
+    <section id="about" class="services section">
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-item  position-relative">
+              <div class="icon">
+                <i class="ri-edge-new-line"></i>
+              </div>
+              <a href="{% url 'service-details' %}" class="stretched-link">
+                <h3>Web development</h3>
+              </a>
+              <p>Web development involves creating and maintaining websites, including design, coding, and functionality, to enhance user experience and engagement online.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="ri-quill-pen-line"></i>
+              </div>
+              <a href="{% url 'service-details' %}" class="stretched-link">
+                <h3>GUI Based Application</h3>
+              </a>
+              <p>A GUI-based application allows users to interact through graphical elements, making it easier to navigate and use features.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-easel"></i>
+              </div>
+              <a href="{% url 'service-details' %}" class="stretched-link">
+                <h3>API Development</h3>
+              </a>
+              <p> Designing and implementing APIs for integration between systems and applications.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="bi bi-bounding-box-circles"></i>
+              </div>
+              <a href="{% url 'service-details' %}" class="stretched-link">
+                <h3>Cloud Solutions</h3>
+              </a>
+              <p>Developing applications that leverage cloud infrastructure for scalability and performance.</p>
+              <a href="{% url 'service-details' %}" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="ri-pie-chart-2-fill"></i>
+              </div>
+              <a href="{% url 'service-details' %}" class="stretched-link">
+                <h3>Data Analytics</h3>
+              </a>
+              <p>Data processing, visualization, and business intelligence solutions.</p>
+              <a href="{% url 'service-details' %}" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+            <div class="service-item position-relative">
+              <div class="icon">
+                <i class="ri-database-2-fill"></i>
+              </div>
+              <a href="service-details.html" class="stretched-link">
+                <h3>Database Management</h3>
+              </a>
+              <p>Database management involves designing, implementing, and maintaining databases to ensure data integrity and accessibility.</p>
+              <a href="{% url 'service-details' %}" class="stretched-link"></a>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+  </main>
+  {% endblock %}
